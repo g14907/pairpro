@@ -22,8 +22,12 @@ public class IntToEng {
 			eng = teen(n);
 		} else if (n / 10 > 1 && n / 10 <= 9) {
 			eng = twoDigit(n) + " " + oneDigit(n % 10);
-		} else if (n / 10 == 10) {
+		} else if (n / 10 >= 10 && n / 10 <= 90 && n % 10 == 0) {
 			eng = oneDigit(n / 100) + " hundred";
+		} else if (n / 10 >= 10 && n / 10 <= 90 && n % 100 >= 10 && n % 100 <=19 ) {
+			eng = oneDigit(n / 100) + " hundred and " + teen(n % 100);
+		} else if (n / 10 >= 10 && n / 10 <= 90) {
+			eng = oneDigit(n / 100) + " hundred and " + twoDigit(n % 100) + " " + oneDigit(n % 10);
 		}
 		return eng;
 	}
