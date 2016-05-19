@@ -15,7 +15,14 @@ public class IntToEng {
 
 	// 数値を英訳する変換するメソッド
 	static String translateEng(int n) {
-		String eng = oneDigit(n);
+		String eng = "";
+		if (n / 10 == 0) {
+			eng = oneDigit(n);
+		} else if (n / 10 == 1) {
+			eng = teen(n);
+		} else if (n / 10 > 1 && n / 10 <= 9) {
+			eng = twoDigit(n) + " " + oneDigit(n % 10);
+		}
 		return eng;
 	}
 
@@ -58,13 +65,52 @@ public class IntToEng {
 		return eng;
 	}
 
-	// 2桁のやつ 
+	// 10~19のやつ
+	static String teen(int n) {
+		String eng = "";
+		switch (n % 10) {
+		case 0:
+			eng = "ten";
+			break;
+		case 1:
+			eng = "eleven";
+			break;
+		case 2:
+			eng = "twelve";
+			break;
+		case 3:
+			eng = "thirteen";
+			break;
+		case 4:
+			eng = "fourteen";
+			break;
+		case 5:
+			eng = "fifteen";
+			break;
+		case 6:
+			eng = "sixteen";
+			break;
+		case 7:
+			eng = "seventeen";
+			break;
+		case 8:
+			eng = "eighteen";
+			break;
+		case 9:
+			eng = "nineteen";
+			break;
+
+		}
+		return eng;
+	}
+
+	// 2桁のやつ
 	static String twoDigit(int n) {
 		String eng = "";
 		switch (n / 10) {
-		/*case 1:
-			eng = "ten";
-			break;*/
+		/*
+		 * case 1: eng = "ten"; break;
+		 */
 		case 2:
 			eng = "twenty";
 			break;
