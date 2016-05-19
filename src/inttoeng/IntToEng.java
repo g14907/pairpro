@@ -22,6 +22,8 @@ public class IntToEng {
 			eng = teen(n);
 		} else if (n / 10 > 1 && n / 10 <= 9) {
 			eng = twoDigit(n) + " " + oneDigit(n % 10);
+		} else if (n / 10 == 10) {
+			eng = oneDigit(n / 100) + " hundred";
 		}
 		return eng;
 	}
