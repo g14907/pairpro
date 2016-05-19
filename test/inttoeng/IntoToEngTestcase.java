@@ -70,4 +70,22 @@ public class IntoToEngTestcase {
 		String actual = IntToEng.translateEng(505);
 		assertThat(actual, is(expected));
 	}
+	@Test
+	public void translateEngで810をeight_hundred_and_tenに変換() {
+		String expected = "eight hundred and ten";
+		String actual = IntToEng.translateEng(810);
+		assertThat(actual, is(expected));
+	}
+	@Test
+	public void translateEngで260をtwo_hundred_and_sixtyに変換() {
+		String expected = "two hundred and sixty";
+		String actual = IntToEng.translateEng(260);
+		assertThat(actual, is(expected));
+	}
+	@Test
+	public void translateEngで134をone_hundred_and_thirty_fourに変換() {
+		String expected = "one hundred and thirty four";
+		String actual = IntToEng.translateEng(134);
+		assertThat(actual, is(expected));
+	}
 }
